@@ -22,6 +22,12 @@ uv run uvicorn api.main:app --reload
 
 Open http://localhost:8000 in a browser, pick one of the suggested user IDs (see below), and chat.
 
+![Chat UI](results/chat_ui_screenshot.png)
+
+Expanding "show reasoning" under a reply reveals the tool calls that grounded it:
+
+![Tool call trace](results/chat_ui_tool_trace_screenshot.png)
+
 Plot embeddings are already precomputed and committed under `data/embeddings/`, so no build step
 is required before first run. To regenerate them (e.g. after changing the embedding model), run
 `uv run python scripts/build_embeddings.py` from the repo root.
