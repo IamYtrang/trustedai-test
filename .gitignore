@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+*.egg-info/
+.env
+data/embeddings/*.tmp
+data/chat_logs/

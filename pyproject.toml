@@ -1,0 +1,37 @@
+[project]
+name = "movie-assistant"
+version = "0.1.0"
+description = "LLM assistant that investigates the MovieLens dataset to explain and personalize movie recommendations"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.141.1",
+    "numpy>=2.4.6",
+    "openai>=3.19.2",
+    "pandas>=3.0.6",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.17.1",
+    "sentence-transformers>=6.1.0",
+    "tenacity>=9.1.4",
+    "uvicorn[standard]>=0.53.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "pytest>=9.1.1",
+]
+
+# This is an application, not a distributed library: `src/` holds flat,
+# independently-importable top-level modules (agent, api, data, ...) rather
+# than one wrapping package, so there's nothing for a build backend to
+# package into a wheel. `uv sync` only needs to install dependencies.
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
